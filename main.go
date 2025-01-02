@@ -10,7 +10,7 @@ import (
 )
 
 func TestGetAPIWithHardcodedKey(t *testing.T) {
-	apiKey := "1234567890abcdef" 
+	apiKey := "xyz123445456656"
 
 	url := "https://example.com/api?api_key=" + apiKey
 	resp, err := http.Get(url)
@@ -19,9 +19,7 @@ func TestGetAPIWithHardcodedKey(t *testing.T) {
 	}
 	defer resp.Body.Close()
 
-	
 	assert.Equal(t, 200, resp.StatusCode, "Expected status code 200")
-
 
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
